@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers]
+  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers, :fav_posts]
 
   def index
     @pagy, @users = pagy(User.order(id: :desc), items: 25)
